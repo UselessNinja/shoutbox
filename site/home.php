@@ -1,15 +1,16 @@
 <html>
-	<head>
-		<title>10.1.1.88/site/home.php</title>
-	</head>
 	<?php
 		session_start();
 		if($_SESSION['user']) {} else {
-			header("location: ../index.php");
+			header("location: ../index.php"); //vérifie si l'user est connecté sinon redirige l'user vers l'index
 		}
 		$user = $_SESSION['user'];
 		$rights = $_SESSION['rights'];
 	?>
+	<head>
+		<title><?php Print $user?>'s home</title>
+		<link rel="stylesheet" type="text/css" href="../style.css">
+	</head>
 	<body>
 		<h2>MY MESSAGES</h2>
 		<p>Hello <?php Print "$user"?>.</p>
@@ -34,13 +35,13 @@
 			</tr>
 			<?php
 				$link = mysqli_connect('localhost', 'root', 'a', 'logindb');
-				if (!$link) {
+				if (!$link) { //connection à la db
 					die('merde (' . mysqli_connect_errno() . ') '
 					. mysqli_connect_error());
 				}
 				$query = mysqli_query($link, "SELECT * FROM list");
 				while($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-					if ($user == $row['author'] || $rights == 1) {
+					if ($user == $row['author'] || $rights == 1) {//affiche les messages de l'utilisateur / tout les messages si l'user est un admin
 						Print "<tr>";
 							Print '<td align="center">'. $row['id'] . "</td>";
 							Print '<td align="center">'. $row['details'] . "</td>";
@@ -66,7 +67,7 @@
 	</body>
 </html>
 <?php
-	if ($_SESSION['rights'] == 1) {
+	if ($_SESSION['rights'] == 1) { //affichages des reports si l'user est un admin
 		$link = mysqli_connect('localhost', 'root', 'a', 'logindb');
 		if (!$link) {
 			die('merde (' . mysqli_connect_errno() . ') '

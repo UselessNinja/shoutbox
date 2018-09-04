@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>10.1.1.88/adm/report.php</title>
+		<link rel="stylesheet" type="text/css" href="../style.css">
 	</head>
 	<body>
 		<h2 align="center">REPORT</h2>
@@ -15,7 +16,7 @@
 				if ($id_exists) {
 					Print '
 						<form action="report.php" method="POST">
-							Reason:<br/> <textarea rows="4" cols="50" name="reason"></textarea><br/>
+							Reason:<br/> <textarea rows="4" cols="50" name="reason" required="required"></textarea><br/>
 							<input type="submit" value="SUBMIT REPORT"/>
 						</form>
 					';

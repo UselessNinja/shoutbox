@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>10.1.1.88/site/lm/edit.php</title>
+		<link rel="stylesheet" type="text/css" href="../../style.css">
 	</head>
 	<?php
 		session_start();

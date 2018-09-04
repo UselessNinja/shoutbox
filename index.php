@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>10.1.1.88</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<h2 align="center">Useless' shoutbox</h2>
@@ -19,13 +20,13 @@
 		</tr>
 		<?php
 			$link = mysqli_connect('localhost', 'root', 'a', 'logindb');
-			if (!$link) {
+			if (!$link) { //connection à la database
 				die('merde (' . mysqli_connect_errno() . ') '
 					. mysqli_connect_error());
 			}
 			$query = mysqli_query($link, "SELECT * from list WHERE public='yes'");
 			while ($row = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
-				Print "<tr>";
+				Print "<tr>"; //affichage des messages publics
 					Print '<td align="center">'. $row['details'] . "</td>";
 					Print '<td align="center">'. $row['author'] . "</td>";
 					Print '<td align="center">'. $row['date_posted']. " - ". $row['time_posted'] . "</td>";

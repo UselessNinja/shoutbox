@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>10.1.1.88/site/contact</title>
+		<link rel="stylesheet" type="text/css" href="../style.css">
 	</head>
 	<body>
 		<h2 align="center">CONTACT</h2>
@@ -50,7 +51,7 @@
 </html>
 <?php
 	if (isset($_POST['email'])) {
-		$email_to = ".@..fr";
+		$email_to = "gael.dorckel@terredappels.fr";
 		$email_subject = "Shoutbox - ". $_POST['last_name']." ". $first_name = $_POST['first_name'];
 		function died($error) {
 			echo "We are very sorry, but there were error(s) found with the form you submitted. ";

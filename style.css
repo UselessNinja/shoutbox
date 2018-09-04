@@ -1,0 +1,32 @@
+body {
+	font: 100% Lucida Sans, Verdana;
+	background-color: black;
+	color: green;
+	margin: 20px;
+	line-height: 26px;
+}
+
+h2 {
+	color: green;
+	margin-left: 20px;
+}
+
+table {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	width: 100%;
+	border: 2px solid #ddd;
+	border-radius: 10px;
+}
+    
+td, th {
+	border: 1px solid #ddd;
+	padding: 8px;
+	border-radius: 5px;
+}
+    
+th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	background-color: #4CAF50;
+	color: white;
+}    
